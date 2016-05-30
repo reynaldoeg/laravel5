@@ -21,6 +21,8 @@ Route::controllers([
 ]);
 
 
+//http://code.tutsplus.com/tutorials/using-laravel-5s-authentication-facade--cms-23461
+
 /*
 |--------------------------------------------------------------------------
 | Modifying the Default Authentication Routes
