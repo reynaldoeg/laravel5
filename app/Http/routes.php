@@ -20,6 +20,10 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::group(array('prefix' => 'api/v1'), function(){
+	Route::resource('customers', 'ApiController');
+});
+
 
 //http://code.tutsplus.com/tutorials/using-laravel-5s-authentication-facade--cms-23461
 
