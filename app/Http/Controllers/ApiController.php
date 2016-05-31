@@ -71,7 +71,28 @@ class ApiController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		try{
+
+			$customer = \App\Customer::find($id);
+			$statusCode = 200;
+			$response = ['customer' => [
+				'id' => (int)$id,
+				'name' => $customer->name,
+				'address' => $customer->address,
+				'telephone' => $customer->telephone,
+				'email' => $customer->email
+			]];
+
+			return Response::json($response, $statusCode);
+
+		}catch(Exception $e){
+			$response = [
+				'error' => 'Customer doesnt exists'
+			];
+			$statusCode = 404;
+
+			return Response::json($response, $statusCode);
+		}
 	}
 
 	/**
